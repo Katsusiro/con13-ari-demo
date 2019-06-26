@@ -46,3 +46,11 @@ libraryDependencies ++= {
     "org.eclipse.jetty.websocket" %  "websocket-client" % jettyVersion
   )
 }
+
+enablePlugins(JettyPlugin)
+
+enablePlugins(JavaAppPackaging)
+
+bashScriptConfigLocation := Some("${app_home}/../conf/jvmopts")
+
+mainClass in Compile := Some("bootstrap.liftweb.Boot")
